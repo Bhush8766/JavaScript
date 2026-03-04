@@ -19,6 +19,10 @@
     <p>Division : <span id="div"></span></p>
 
 
+    <input type="text" id="UserName">
+    <button onclick="getUser()">Get User Name</button>
+
+
     <script>
         document.getElementById("ParaDemo").innerHTML = "Hello this is paragraph."
         document.querySelector("#heading").textContent = "This is heading."
@@ -38,6 +42,13 @@
         document.getElementById('sub').textContent = Number(n1)-Number(n2)
         document.getElementById('mul').textContent = Number(n1)*Number(n2)
         document.getElementById('div').textContent = Number(n1)/Number(n2)
+    </script>
+
+    <script>
+        function getUser() {
+            userN = document.getElementById("getUser").value
+        }
+
     </script>
 
     <script src="./ProgramOne.js"></script>
