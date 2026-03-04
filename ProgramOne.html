@@ -13,6 +13,9 @@
     <button onclick="clickMeToShow()">Click Me</button>
 
 
+    <p>Addition : <span id="add"></span></p>
+
+
     <script>
         document.getElementById("ParaDemo").innerHTML = "Hello this is paragraph."
         document.querySelector("#heading").textContent = "This is heading."
@@ -22,6 +25,13 @@
         function clickMeToShow() {
             document.write("Hello, This info is Display after click on button. ")
         }
+    </script>
+
+
+    <script>
+        n1 = prompt("Enter Number One")
+        n2 = prompt("Enter Number Two")
+        document.getElementById('add').textContent = Number(n1)+Number(n2)
     </script>
 
     <script src="./ProgramOne.js"></script>
