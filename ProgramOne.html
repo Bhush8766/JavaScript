@@ -21,6 +21,7 @@
 
     <input type="text" id="UserName">
     <button onclick="getUser()">Get User Name</button>
+    <div id="greet"></div>
 
 
     <script>
@@ -46,7 +47,8 @@
 
     <script>
         function getUser() {
-            userN = document.getElementById("getUser").value
+            userN = document.getElementById("UserName").value
+            document.querySelector("#greet").innerHTML = "Welcome, "+userN
         }
 
     </script>
