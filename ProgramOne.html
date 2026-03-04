@@ -14,6 +14,9 @@
 
 
     <p>Addition : <span id="add"></span></p>
+    <p>Subtraction : <span id="sub"></span></p>
+    <p>Multiplication : <span id="mul"></span></p>
+    <p>Division : <span id="div"></span></p>
 
 
     <script>
@@ -32,6 +35,9 @@
         n1 = prompt("Enter Number One")
         n2 = prompt("Enter Number Two")
         document.getElementById('add').textContent = Number(n1)+Number(n2)
+        document.getElementById('sub').textContent = Number(n1)-Number(n2)
+        document.getElementById('mul').textContent = Number(n1)*Number(n2)
+        document.getElementById('div').textContent = Number(n1)/Number(n2)
     </script>
 
     <script src="./ProgramOne.js"></script>
