@@ -9,12 +9,22 @@
 
 
     <p id="ParaDemo"></p>
+    <h2 id="heading"></h2>
+    <button onclick="clickMeToShow()">Click Me</button>
 
 
     <script>
         document.getElementById("ParaDemo").innerHTML = "Hello this is paragraph."
+        document.querySelector("#heading").textContent = "This is heading."
     </script>
 
+    <script>
+        function clickMeToShow() {
+            document.write("Hello, This info is Display after click on button. ")
+        }
+    </script>
+
+    <script src="./ProgramOne.js"></script>
     
 </body>
 </html>
