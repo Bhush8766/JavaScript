@@ -1,4 +1,11 @@
+//Datatypes in js
+//1. string 
+// 'str' 
+// "str" 
 
+// `
+// multiline str
+// `
 str1 = 'Wisdom Sprouts'
 
 console.log(typeof(str1), 'typeof of str1')
