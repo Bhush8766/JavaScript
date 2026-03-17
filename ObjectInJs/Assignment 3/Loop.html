@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 3</title>
+</head>
+<body>
+
+<h2>Assignment 3: Loop Object</h2>
+<button onclick="run()">Run</button>
+<p id="output"></p>
+
+<script>
+function run() {
+    let product = {
+        name: "Laptop",
+        price: 50000,
+        stock: 10
+    };
+
+    let result = "";
+    for (let key in product) {
+        result += key + ": " + product[key] + " | ";
+    }
+
+    document.getElementById("output").innerText = result;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 6</title>
+
+<style>
+body { font-family: Arial; text-align: center; }
+input { padding: 8px; }
+button { padding: 6px 10px; margin: 5px; }
+li { margin: 5px; }
+</style>
+
+</head>
+<body>
+
+<h2>Assignment 6: Task Manager</h2>
+
+<input type="text" id="taskInput" placeholder="Enter task">
+<button onclick="addTask()">Add</button>
+
+<ul id="taskList"></ul>
+
+<script>
+let tasks = [];
+
+function addTask() {
+    let task = document.getElementById("taskInput").value;
+    if (task === "") return;
+
+    tasks.push(task);
+    document.getElementById("taskInput").value = "";
+    displayTasks();
+}
+
+function displayTasks() {
+    let list = document.getElementById("taskList");
+    list.innerHTML = "";
+
+    tasks.forEach((task, index) => {
+        list.innerHTML += `
+            <li>
+                ${task}
+                <button onclick="editTask(${index})">Edit</button>
+                <button onclick="deleteTask(${index})">Delete</button>
+            </li>
+        `;
+    });
+}
+
+function deleteTask(index) {
+    tasks.splice(index, 1);
+    displayTasks();
+}
+
+function editTask(index) {
+    let newTask = prompt("Update task:", tasks[index]);
+    if (newTask) {
+        tasks[index] = newTask;
+        displayTasks();
+    }
+}
+</script>
+
+</body>
+</html>

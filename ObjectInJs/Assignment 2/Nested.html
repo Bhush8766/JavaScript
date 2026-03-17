@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 2</title>
+</head>
+<body>
+
+<h2>Assignment 2: Nested Object</h2>
+<button onclick="run()">Run</button>
+<p id="output"></p>
+
+<script>
+function run() {
+    let book = {
+        title: "JavaScript Basics",
+        author: "John",
+        details: {
+            pages: 200,
+            genre: "Education"
+        }
+    };
+
+    document.getElementById("output").innerText =
+        "Pages: " + book.details.pages +
+        ", Genre: " + book.details.genre;
+}
+</script>
+
+</body>
+</html>

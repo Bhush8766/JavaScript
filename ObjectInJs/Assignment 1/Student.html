@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 1</title>
+</head>
+<body>
+
+<h2>Assignment 1: Student Object</h2>
+<button onclick="run()">Run</button>
+<p id="output"></p>
+
+<script>
+function run() {
+    let student = {
+        name: "Riya",
+        age: 20,
+        grade: "A"
+    };
+
+    student.subject = "Math";
+    student.grade = "A+";
+    delete student.age;
+
+    document.getElementById("output").innerText = JSON.stringify(student);
+}
+</script>
+
+</body>
+</html>

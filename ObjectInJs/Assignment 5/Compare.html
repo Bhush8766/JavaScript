@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 5</title>
+</head>
+<body>
+
+<h2>Assignment 5: Compare Objects</h2>
+<button onclick="run()">Compare</button>
+<p id="output"></p>
+
+<script>
+function run() {
+    let person1 = { name: "Nandini", age: 20 };
+    let person2 = { name: "Riya", age: 22 };
+
+    let result = "";
+
+    result += (person1.name === person2.name)
+        ? "Names same, "
+        : "Names different, ";
+
+    result += (person1.age === person2.age)
+        ? "Ages same"
+        : "Ages different";
+
+    document.getElementById("output").innerText = result;
+}
+</script>
+
+</body>
+</html>
