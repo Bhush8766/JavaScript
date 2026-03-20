@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h3>2. Student Marks Calculator</h3>
+
+    <div class="input-section">
+        <input type="number" id="markInput" placeholder="Enter a mark">
+        <button onclick="addMark()">Add Mark</button>
+        <button onclick="calculate()">Calculate</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+
+    <div class="result-box">
+        <p id="total">Total Marks: </p>
+        <p id="average">Average Marks: </p>
+        <p id="highest">Highest Mark: </p>
+        <p id="lowest">Lowest Mark: </p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

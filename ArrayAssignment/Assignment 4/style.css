@@ -1,0 +1,43 @@
+body {
+    font-family: Arial;
+    background: #f5f5f5;
+}
+
+/* Main container */
+.container {
+    width: 500px;
+    margin: 100px auto;
+    background: #eaeaea;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Input + buttons */
+input {
+    padding: 6px;
+    width: 200px;
+}
+
+button {
+    padding: 6px 10px;
+    margin: 5px 3px;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+/* Result boxes */
+.box {
+    background: #f9f9f9;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.box p {
+    background: #fff;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
