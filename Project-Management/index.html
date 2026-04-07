@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Table</title>
+
+<style>
+body {
+  font-family: Arial;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+}
+
+/* Sub text */
+.sub {
+  color: gray;
+  font-size: 13px;
+}
+
+/* Status colors */
+.completed {
+  color: green;
+  font-weight: bold;
+}
+
+.inprogress {
+  color: red;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<h1>Hello, world!</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Project Name With Details</th>
+      <th>Department</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+    </tr>
+  </thead>
+
+  <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+const API = "https://674e84f1635bad45618eebc1.mockapi.io/api/v1/projects";
+
+async function loadData() {
+  const res = await fetch(API);
+  const data = await res.json();
+
+  const table = document.getElementById("tableBody");
+
+  data.forEach((p, index) => {
+
+    let title = p.title || p.name || "Project";
+    let desc = p.description || "Project details";
+    let dept = p.department || "Development";
+    let priority = p.priority || "High";
+    let status = p.status || "inprogress";
+    let start = p.startDate || "2026-01-01";
+    let end = p.endDate || "2026-02-01";
+
+    let statusClass = status === "completed" ? "completed" : "inprogress";
+
+    table.innerHTML += `
+      <tr>
+        <td>${index + 1}</td>
+
+        <td>
+          <strong>${title}</strong><br>
+          <span class="sub">${desc}</span>
+        </td>
+
+        <td>${dept}</td>
+        <td>${priority}</td>
+
+        <td class="${statusClass}">
+          ${status === "completed" ? "Completed" : "In Progress"}
+        </td>
+
+        <td>${start}</td>
+        <td>${end}</td>
+      </tr>
+    `;
+  });
+}
+
+loadData();
+</script>
+
+</body>
+</html>
