@@ -109,7 +109,7 @@ document.getElementById("statusFilter").addEventListener("change", function () {
   displayData();
 });
    
-async function addProject() {
+async function addProject() {   
   
   const project = {
     ProjectName: document.getElementById("name").value,
