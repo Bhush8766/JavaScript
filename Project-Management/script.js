@@ -108,7 +108,7 @@ document.getElementById("statusFilter").addEventListener("change", function () {
   currentPage = 1;
   displayData();
 });
-
+   
 async function addProject() {
   
   const project = {
