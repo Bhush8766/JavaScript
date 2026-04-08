@@ -120,7 +120,7 @@ async function addProject() {
     EndDate: document.getElementById("endDate").value,
     status: document.getElementById("status").value
   };   
-
+   
   if (!project.ProjectName) {
     alert("Enter project name");
     return;
