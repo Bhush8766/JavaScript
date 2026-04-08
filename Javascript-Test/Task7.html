@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debounce Example</title>
+
+<style>
+    body {
+        font-family: Arial;
+        background: #f4f6f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .box {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        width: 300px;
+        text-align: center;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Debounce Search</h2>
+    <input type="text" id="search" placeholder="Type something...">
+    <p>Open console to see result</p>
+</div>
+
+<script>
+    
+function debounce(fn, delay) {
+    let timer;
+
+    return function (...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            fn.apply(this, args);
+        }, delay);
+    };
+}
+
+const input = document.getElementById("search");
+
+input.addEventListener("input", debounce(function () {
+    console.log("Search triggered:", this.value);
+}, 300));
+
+</script>
+
+</body>
+</html>

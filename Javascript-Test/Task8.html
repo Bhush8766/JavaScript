@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Copy Example</title>
+
+<style>
+    body {
+        font-family: Arial;
+        background: #f4f6f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .box {
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        width: 400px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 120px;
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    pre {
+        background: #222;
+        color: #0f0;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Deep Copy Object</h2>
+
+    <textarea id="inputObj">
+{
+  "name": "John",
+  "address": {
+    "city": "New York"
+  }
+}
+    </textarea>
+
+    <button onclick="handleCopy()">Deep Copy</button>
+
+    <pre id="output"></pre>
+</div>
+
+<script>
+/* =========================
+   DEEP COPY FUNCTION
+========================= */
+function deepCopy(obj) {
+    return structuredClone(obj); // modern method
+    // fallback: return JSON.parse(JSON.stringify(obj));
+}
+
+function handleCopy() {
+    try {
+        let input = document.getElementById("inputObj").value;
+        let original = JSON.parse(input);
+
+        let copy = deepCopy(original);
+
+        // Modify copy to prove it's independent
+        copy.name = "Modified Name";
+
+        document.getElementById("output").textContent =
+            "Original:\n" + JSON.stringify(original, null, 2) +
+            "\n\nCopied (Modified):\n" + JSON.stringify(copy, null, 2);
+
+    } catch (e) {
+        alert("Invalid JSON!");
+    }
+}
+</script>
+
+</body>
+</html>
