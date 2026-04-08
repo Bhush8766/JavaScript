@@ -73,12 +73,9 @@
 </div>
 
 <script>
-/* =========================
-   DEEP COPY FUNCTION
-========================= */
+
 function deepCopy(obj) {
-    return structuredClone(obj); // modern method
-    // fallback: return JSON.parse(JSON.stringify(obj));
+    return structuredClone(obj); 
 }
 
 function handleCopy() {
@@ -88,7 +85,6 @@ function handleCopy() {
 
         let copy = deepCopy(original);
 
-        // Modify copy to prove it's independent
         copy.name = "Modified Name";
 
         document.getElementById("output").textContent =
